@@ -1,0 +1,29 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4_odev3.GorevEklePage"
+             Title="Yeni Görev Ekle"
+             Background="{DynamicResource ArkaPlanRengi}">
+
+    <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="#F3E5F5">
+        <Label Text="Görev Başlığı" FontAttributes="Bold" TextColor="#4A148C"/>
+        <Entry x:Name="entBaslik" Placeholder="Örn: Ödev Yap" BackgroundColor="White"/>
+
+        <Label Text="Detaylar" FontAttributes="Bold" TextColor="#4A148C"/>
+        <Editor x:Name="entDetay" Placeholder="Görev detaylarını buraya yazın..." 
+                HeightRequest="100" BackgroundColor="White"/>
+
+        <Label Text="Tarih Seçin" FontAttributes="Bold" TextColor="#4A148C"/>
+        <DatePicker x:Name="dpTarih" MinimumDate="2025-01-01"/>
+
+        <Label Text="Saat Seçin" FontAttributes="Bold" TextColor="#4A148C"/>
+        <TimePicker x:Name="tpSaat"/>
+
+        <Button x:Name="btnKaydet"
+                Text="KAYDET" 
+                Clicked="OnKaydetClicked" 
+                BackgroundColor="#4A148C" 
+                TextColor="White"  
+                CornerRadius="10"
+                Margin="0,20"/>
+    </VerticalStackLayout>
+</ContentPage>

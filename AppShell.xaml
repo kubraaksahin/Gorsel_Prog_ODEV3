@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp4_odev3.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp4_odev3"
+    Title="MauiApp4_odev3">
+
+        <ShellContent
+            Title="Giriş"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="LoginPage" />
+
+
+        <ShellContent
+            Title="Döviz Kuru"
+            ContentTemplate="{DataTemplate local:DovizPage}"
+            Route="DovizPage" />
+    
+    
+        <ShellContent
+             Title="Haberler"
+             ContentTemplate="{DataTemplate local:Haberler}"
+             Route="Haberler" />
+
+        <ShellContent
+             Title="Hava Durumu"
+             ContentTemplate="{DataTemplate local:HavaDurumu}"
+             Route="HavaDurumu" />
+
+        <ShellContent
+              Title="Yapılacaklar"
+              ContentTemplate="{DataTemplate local:YapilacaklarPage}"
+              Route="YapilacaklarPage" />
+    
+        <ShellContent
+              Title="Ayarlar"
+              ContentTemplate="{DataTemplate local:AyarlarPage}"
+              Route="AyarlarPage" />
+
+
+
+</Shell>

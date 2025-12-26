@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4_odev3.AyarlarPage"
+             Title="AyarlarPage">
+    <VerticalStackLayout Padding="20" Spacing="20" BackgroundColor="{AppThemeBinding Light=#F3E5F5, Dark=#212121}">
+
+        <Label Text="Görünüm Ayarları" FontSize="20" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#4A148C, Dark=White}"/>
+
+        <HorizontalStackLayout Spacing="20" VerticalOptions="Center">
+            <Label Text="Koyu Tema" VerticalOptions="Center" FontSize="16" />
+            <Switch x:Name="ThemeSwitch" 
+                Toggled="OnThemeToggled" 
+                IsToggled="{OnPlatform Android=false, iOS=false}"/>
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>
