@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4_odev3.LoginPage"
+             Title=" Giriş Yap veya Kayıt Ol">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="SoftMor">Purple</Color>
+            <Color x:Key="SoftArkaPlan">#F3E5F5</Color>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource SoftMor}, Dark={StaticResource SoftMor}}" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="CharacterSpacing" Value="1" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="{StaticResource SoftMor}" />
+                <Setter Property="PlaceholderColor" Value="Gray" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="HeightRequest" Value="45" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource SoftMor}, Dark=White}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Background>
+        <SolidColorBrush Color="#E6E6FA" />
+    </ContentPage.Background>
+    
+    <Border Margin="10">
+        <VerticalStackLayout Margin="10" Spacing="10">
+
+            <Label  Text="Oturum Aç:" FontSize="15" />
+            <Entry 
+            x:Name="EmailEntry"
+            Placeholder="e-mail" />
+            <Entry
+            x:Name="PasswordEntry"
+            Placeholder="Parola"
+            IsPassword="True" />
+
+            <Button 
+                Text="Giriş Yap"
+                Clicked="OnLoginButtonClicked"
+                />
+            
+            <Button 
+            Text="Hesabın yoksa, yeni bir hesap oluştur."
+             Clicked="OnRegisterButtonClicked"/>
+
+        </VerticalStackLayout>
+    </Border>
+</ContentPage>

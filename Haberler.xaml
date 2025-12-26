@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4_odev3.Haberler"
+             Title="Haberler"
+             Background="{DynamicResource ArkaPlanRengi}">
+
+    
+
+    <VerticalStackLayout>
+        <ScrollView Orientation="Horizontal" HeightRequest="60">
+            <HorizontalStackLayout x:Name="StackKategoriler" 
+                                 Padding="10" 
+                                 Spacing="10" 
+                                 VerticalOptions="Center"/>
+        </ScrollView>
+
+        <CollectionView x:Name="lstHaberler" 
+                        SelectionMode="Single" 
+                        SelectionChanged="OnHaberSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" ColumnDefinitions="Auto, *">
+                        <Border StrokeShape="RoundRectangle 10" WidthRequest="120" HeightRequest="80" Margin="0,0,10,0">
+                            <Image Source="{Binding enclosure.url}" Aspect="AspectFill"/>
+                        </Border>
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="5" VerticalOptions="Center">
+                            <Label Text="{Binding title}" FontAttributes="Bold" LineBreakMode="WordWrap" MaxLines="2" />
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="{Binding author}" FontSize="11" TextColor="Gray"/>
+                                <Label Text="|" FontSize="11" TextColor="Gray"/>
+                                <Label Text="{Binding pubDate}" FontSize="11" TextColor="Gray"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

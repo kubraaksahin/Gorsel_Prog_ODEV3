@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4_odev3.RegisterPage"
+             Title="RegisterPage"
+             Background="{DynamicResource ArkaPlanRengi}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="SoftMor">Purple</Color>
+            <Color x:Key="SoftArkaPlan">#F3E5F5</Color>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource SoftMor}, Dark={StaticResource SoftMor}}" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="CharacterSpacing" Value="1" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="{StaticResource SoftMor}" />
+                <Setter Property="PlaceholderColor" Value="Gray" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="HeightRequest" Value="45" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource SoftMor}, Dark=White}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Border Margin="10">
+
+        <VerticalStackLayout Spacing="10" Margin="10">
+            <Label Text="Kullanıcı Bilgilerini Gir"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+                   FontSize="15"/>
+
+            <Entry 
+            x:Name="UsernameEntry"
+            Placeholder="Kullanıcı Adı" />
+
+            <Entry 
+            x:Name="EmailEntry"
+            Placeholder="Email" />
+
+            <Entry
+            x:Name="PasswordEntry"
+            Placeholder="Parola"
+            IsPassword="True" />
+
+            <HorizontalStackLayout Spacing="10"
+                                   HorizontalOptions="Center">
+                <Button 
+                Text="Kayıt Ol" WidthRequest="100"
+                Clicked="OnRegisterButtonClicked"   />
+                <Button
+                Text="İptal" WidthRequest="100"
+                Clicked="CancelButtonClicked"/>
+            </HorizontalStackLayout>
+
+            <Button 
+            Text="Zaten bir hesabın var mı? Giriş Yap"
+            Clicked="OnGotoLoginPageButtonClicked" />
+
+        </VerticalStackLayout>
+    </Border>
+</ContentPage>

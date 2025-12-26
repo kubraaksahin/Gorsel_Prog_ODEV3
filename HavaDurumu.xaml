@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4_odev3.HavaDurumu"
+             Title="Hava Durumu"
+             Background="{DynamicResource ArkaPlanRengi}">
+    
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="➕" Clicked="AddSehir_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <CollectionView x:Name="lstSehirler" Margin="10">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Border Margin="10" Padding="5">
+                    <VerticalStackLayout Spacing="5">
+                        <Grid ColumnDefinitions="*, Auto, Auto">
+                            <Label Text="{Binding Name}" VerticalOptions="Center" FontSize="18" FontAttributes="Bold" />
+                            <Button Text="🔄" Grid.Column="1" CommandParameter="{Binding}" Clicked="Update_Clicked" BackgroundColor="Transparent" TextColor="Blue"/>
+                            <Button Text="❌" Grid.Column="2" CommandParameter="{Binding}" Clicked="Remove_Clicked" BackgroundColor="Transparent" TextColor="Red" />
+                        </Grid>
+                        <WebView Source="{Binding Source}" HeightRequest="200" HorizontalOptions="FillAndExpand" />
+                    </VerticalStackLayout>
+                </Border>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

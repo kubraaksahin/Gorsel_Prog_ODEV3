@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4_odev3.YapilacaklarPage"
+             Title="Yapılacaklar"
+             BackgroundColor="{DynamicResource ArkaPlanRengi}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ekle" Clicked="OnAddClicked" IconImageSource="add_icon.png" />
+        <ToolbarItem Text="Yenile" Clicked="OnRefreshClicked" IconImageSource="refresh_icon.png" />
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="*">
+        <CollectionView x:Name="TasksCollection" Margin="10">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Style="{StaticResource GorevKutusuStili}" Margin="5,5" Padding="12">
+                        <Grid ColumnDefinitions="40, *, Auto" RowDefinitions="Auto, Auto">
+
+                            <CheckBox Grid.Column="0" Grid.RowSpan="2"
+                                  IsChecked="{Binding IsDone}"
+                                  Color="{AppThemeBinding Light=#4A148C, Dark=#D186F0}" 
+                                  VerticalOptions="Center"/>
+
+                            <Label Grid.Column="1" Grid.Row="0"
+                                   Text="{Binding Baslik}" 
+                                   Style="{StaticResource GorevYaziStili}"
+                                   FontAttributes="Bold" FontSize="16" />
+
+                            <VerticalStackLayout Grid.Column="1" Grid.Row="1" Spacing="2">
+                                <Label Text="{Binding Detay}" 
+                                       Style="{StaticResource GorevYaziStili}" 
+                                       FontSize="13" Opacity="0.8" />
+                                <Label Text="{Binding FullDateTime}" 
+                                       TextColor="{AppThemeBinding Light=#7B1FA2, Dark=#D186F0}"
+                                       FontSize="11" />
+                            </VerticalStackLayout>
+
+                            <HorizontalStackLayout Grid.Column="2" Grid.RowSpan="2" VerticalOptions="Center" Spacing="8">
+                                <ImageButton Source="{AppThemeBinding Light=edit_icon.png, Dark=edit_white.png}"
+                                         CommandParameter="{Binding .}" Clicked="OnEditClicked"
+                                         WidthRequest="28" BackgroundColor="Transparent" />
+                                <ImageButton Source="{AppThemeBinding Light=delete_icon.png, Dark=delete_white.png}"
+                                         CommandParameter="{Binding .}" Clicked="OnDeleteClicked"
+                                         WidthRequest="28" BackgroundColor="Transparent" />
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
+   

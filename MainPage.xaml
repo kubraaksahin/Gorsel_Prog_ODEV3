@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4_odev3.MainPage"
+             Title="Hoşgeldiniz"
+             Background="{DynamicResource ArkaPlanRengi}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Purple" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    
+    
+    <VerticalStackLayout Spacing="15" Padding="30" VerticalOptions="Center">
+
+        <!--Kendimi tanıtacak resim ve bilgileri ekledim.-->
+        <Label Text="Ödev-3"
+               HorizontalTextAlignment="Center"
+               FontSize="30"
+               FontAttributes="Bold"/>
+
+        <Image
+              Source="profil.jpg" 
+              HeightRequest="300"/>
+
+        <Label
+              Text="23010310003"
+              FontAttributes="Bold"
+              HorizontalTextAlignment="Center"
+              FontSize="Medium"/>
+
+        <Label
+              Text="Kübra Akşahin"
+              FontAttributes="Bold"
+              HorizontalTextAlignment="Center"
+              FontSize="Medium"/>
+
+        <Label
+              Text="Bilgisayar Mühendisliği 3.Sınıf"
+              FontAttributes="Bold"
+              HorizontalTextAlignment="Center"
+              FontSize="Small"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>
+    
